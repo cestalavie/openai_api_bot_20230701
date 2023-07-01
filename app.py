@@ -30,7 +30,8 @@ def communicate():
 
     user_input=st.text_input("input the messages", key="user_input", on_change=communicate)
 
-    if st.session_state["messages"]
+    if st.session_state["messages"]:
+        messages = st.session_state["messages"]
 
     for message in reversed(messages[1:]):
         speaker="🐈"
