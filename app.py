@@ -6,13 +6,13 @@ openai_api_key=st.secrets.OpenAIAPI.openai_api_key
 
 if "messages" not in st.session_state:
     st.session_state["messages"]=[
-        ["role": "system", "content": "you are good assistant AI"]
+        {"role": "system", "content": "you are good assistant AI"}
     ]
 
 def communicate():
     messages = st.session_state["messages"]
 
-    user_message=["role": "user", "content": st.session_state["user_input"]]
+    user_message={"role": "user", "content": st.session_state["user_input"]}
     messages.append(user_message)
 
     response = openai.ChatCompletion.create(
